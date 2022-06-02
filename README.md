@@ -10,12 +10,12 @@
 Sebelum memulai menggunakan Framework Codeigniter, perlu dilakukan konfigurasi pada webserver. Beberapa ekstensi PHP perlu diaktifkan untuk kebutuhan
 pengembangan Codeigniter 4.
 Berikut beberapa ekstensi yang perlu diaktifkan:
-<br>• php-json ekstension untuk bekerja dengan JSON;<br>
-• php-mysqlnd native driver untuk MySQL;
-<br>• php-xml ekstension untuk bekerja dengan XML;</br>
-• php-intl ekstensi untuk membuat aplikasi multibahasa;
-<br>• libcurl (opsional), jika ingin pakai Curl. Untuk mengaktifkan ekstentsi tersebut,</br>
-<p>Untuk mengaktifkan ekstentsi tersebut, melalu XAMPP Control Panel, pada bagian Apache klik Config -> PHP.ini</p>
+<br>• <b>php-json</b> ekstension untuk bekerja dengan JSON;<br>
+• <b>php-mysqlnd</b> native driver untuk MySQL;
+<br>• <b>php-xml</b> ekstension untuk bekerja dengan XML;</br>
+• <b>php-intl</b> ekstensi untuk membuat aplikasi multibahasa;
+<br>• <b>libcurl</b> (opsional), jika ingin pakai Curl. Untuk mengaktifkan ekstentsi tersebut,</br>
+<p>Untuk mengaktifkan ekstentsi tersebut, melalu <b>XAMPP Control Panel</b>, pada bagian Apache klik <b>Config -> PHP.ini</b></p>
 
 ![](Foto/xampp.png)
 
@@ -26,9 +26,18 @@ diaktifkan. Kemudian simpan kembali filenya dan restart Apache web server.
 
 ## Instalasi Codeigniter 4
 Untuk melakukan instalasi Codeigniter 4 dapat dilakukan dengan dua cara, yaitu cara
-manual dan menggunakan composer. Pada praktikum ini kita menggunakan cara
+manual dan menggunakan <b>composer</b>. Pada praktikum ini kita menggunakan cara
 manual.
-<br>• Unduh Codeigniter dari website https://codeigniter.com/download</br>
-• Extrak file zip Codeigniter ke direktori htdocs/lab11_ci.
-<br>• Ubah nama direktory framework-4.x.xx menjadi ci4.</br>
-• Buka browser dengan alamat http://localhost/lab11_ci/ci4/public/
+<br>• Unduh <b>Codeigniter</b> dari website https://codeigniter.com/download</br>
+• Extrak file zip Codeigniter ke direktori <b>htdocs/lab11_php_ci</b>.
+<br>• Ubah nama direktory <b>framework-4.x.xx</b> menjadi <b>ci4</b>.</br>
+• Buka browser dengan alamat http://localhost/lab11_php_ci/ci4/public/
+
+## Menjalankan CLI (Command Line Interface)
+Codeigniter 4 menyediakan CLI untuk mempermudah proses development. Untuk mengakses CLI buka terminal/command prompt.
+![](Foto/foto2.png)
+
+Arahkan lokasi direktori sesuai dengan direktori kerja project dibuat (xampp/<b>htdocs/lab11_ci/ci4/</b>) <p>Setelah itu kita memanggil CLI Codeigniter dengan menjalankan perintah:</p>
+```
+php spark
+```
