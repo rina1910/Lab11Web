@@ -32,6 +32,7 @@ manual.
 • Extrak file zip Codeigniter ke direktori <b>htdocs/lab11_php_ci</b>.
 <br>• Ubah nama direktory <b>framework-4.x.xx</b> menjadi <b>ci4</b>.</br>
 • Buka browser dengan alamat http://localhost/lab11_php_ci/ci4/public/
+![](Foto/foto4.png)
 
 ## Menjalankan CLI (Command Line Interface)
 Codeigniter 4 menyediakan CLI untuk mempermudah proses development. Untuk mengakses CLI buka terminal/command prompt.
@@ -41,3 +42,6 @@ Arahkan lokasi direktori sesuai dengan direktori kerja project dibuat (xampp/<b>
 ```
 php spark
 ```
+![](Foto/foto3.png)
+
+
