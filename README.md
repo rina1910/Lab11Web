@@ -44,4 +44,25 @@ php spark
 ```
 ![](Foto/foto3.png)
 
+## Mengaktifkan Mode Debugging
+Codeigniter 4 menyediakan fitur debugging untuk memudahkan developer untuk
+mengetahui pesan error apabila terjadi kesalahan dalam membuat kode program.
+<p>Secara default fitur ini belum aktif. Ketika terjadi error pada aplikasi akan ditampilkan pesan kesalahan seperti berikut.</p>
+
+![](Foto/foto5.png)
+
+<p>Semua jenis error akan ditampilkan sama. Untuk memudahkan mengetahui jenis errornya, maka perlu diaktifkan mode debugging dengan mengubah nilai konfigurasi pada environment variable <b>CI_ENVIRINMENT</b> menjadi <b>development</b>.</p>
+
+![](Foto/foto6.png)
+
+Ubah nama file env menjadi .env kemudian buka file tersebut dan ubah nilai variable
+<b>CI_ENVIRINMENT</b> menjadi <b>development.</b>
+
+<p>Contoh error yang terjadi. Untuk mencoba error tersebut, ubah kode pada file <b>app/Controller/Home.php</b> hilangkan titik koma pada akhir kode.
+
+![](Foto/foto7.png)
+<br>Dan inilah Hasilnya</br>
+![](Foto/foto8.png)
+
+
 
