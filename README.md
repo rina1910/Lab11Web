@@ -182,3 +182,49 @@ Secara default fitur autoroute pada Codeiginiter sudah aktif. Untuk mengubah sta
 ```php
 $routes->setAutoRoute(true);
 ```
+Tambahkan method baru pada Controller Page seperti berikut.
+```php
+public function tos()
+{
+    echo "ini halaman Term of Services";
+}
+```
+Method ini belum ada pada routing, sehingga cara mengaksesnya dengan menggunakan
+alamat: http://localhost/lab11_php_ci/ci4/public/page/tos
+![](Foto/foto14.png)
+
+## Membuat View
+Selanjutnya adalam membuat view untuk tampilan web agar lebih menarik. Buat file
+baru dengan nama about.php pada direktori view (<b>app/view/about.php</b>) kemudian isi
+kodenya seperti berikut.
+```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><?= $title; ?></title>
+</head>
+<body>
+    <h1><?= $title; ?></h1>
+    <hr>
+    <p><?= $content; ?></p>
+</body>
+</html>
+```
+Ubah method about pada class Controller Page menjadi seperti berikut:
+```php
+public function about()
+{
+    return view('about', [
+        'title' => 'Halaman Abot',
+        'content' => 'Ini adalah halaman abaut yang menjelaskan tentang isi
+halaman ini.'
+    ]);
+}
+```
+![](Foto/foto15.png)
+
+## Membuat Layout Web dengan CSS
+Pada dasarnya layout web dengan css dapat diimplamentasikan dengan mudah pada codeigniter. Yang perlu diketahui adalah, pada Codeigniter 4 file yang menyimpan asset css dan javascript terletak pada direktori public.
+
+<p>Buat file css pada direktori public dengan nama style.css (copy file dari praktikum lab4_layout. Kita akan gunakan layout yang pernah dibuat pada praktikum 4.</p>
