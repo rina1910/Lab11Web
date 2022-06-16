@@ -70,7 +70,7 @@ dan file yang ada. Buka pada Windows Explorer atau dari Visual Studio Code ->
 Open Folder.
 Terdapat beberapa direktori dan file yang perlu dipahami fungsi dan kegunaannya.
 <br>• <b>.github</b> folder ini kita butuhkan untuk konfigurasi repo github, seperti konfigurasi untuk build dengan github action;</br>
-• <b>app<b> folder ini akan berisi kode dari aplikasi yang kita kembangkan;
+• <b>app</b> folder ini akan berisi kode dari aplikasi yang kita kembangkan;
 <br>• <b>public</b> folder ini berisi file yang bisa diakses oleh publik, seperti file index.php,</br>
 robots.txt, favicon.ico, ads.txt, dll;
 <br>• <b>tests</b> folder ini berisi kode untuk melakukan testing dengna PHPunit;</br>
@@ -91,4 +91,34 @@ aplikasi.
 dibutuhkan pada repo github atau gitlab.
 • <b>spark</b> adalah program atau script yang berfungsi untuk menjalankan server,
 generate kode, dll.
+![](Foto/foto9.png)
+<p>Fokus kita pada folder <b>app</b>, dimana folder tersebut adalah area kerja kita untuk
+membuat aplikasi. Dan folder <b>public</b> untuk menyimpan aset web seperti css, gambar,
+javascript, dll.</p>
+
+## Memahami Konsep MVC
+Codeigniter menggunakan konsep MVC. MVC meripakan singkatan dari *Model-View-Controller*. MVC merupakan konsep arsitektur yang umum digunakan
+dalam pengembangan aplikasi. Konsep MVC adalah memisahkan kode program
+berdasarkan logic proses, data, dan tampilan. Untuk logic proses diletakkan pada
+direktori Contoller, Objek data diletakkan pada direktori Model, dan desain tampilan
+diletakkan pada direktori View.
+
+<p>Codeigniter menggunakan konsep pemrograman berorientasi objek dalam
+mengimplementasikan konsep MVC.</p>
+
+<p><b>Model</b> merupakan kode program yang berisi pemodelan data. Data dapat berupa database ataupun sumber lainnya.</p>
+
+<p><b>View</b> merupakan kode program yang berisi bagian yang menangani terkait tampilan user interface sebuah aplikasi. didalam aplikasi web biasanya pasti akan berhubungan
+dengan html dan css.</p>
+
+<p><b>Controller</b> merupakaan kode program yang berkaitan dengan logic proses yang menghubungkan antara view dan model Controller berfungsi untuk menerima request dan data dari user kemudian diproses dengan menghubungkan bagian model dan view.</p>
+
+<p><b>Routing dan Controller</b>
+<br>Routing merupakan proses yang mengatur arah atau rute dari request untuk menentukan
+fungsi/bagian mana yang akan memproses request tersebut. Pada framework CI4, routing bertujuan untuk menentukan Controller mana yang harus merespon sebuah request. Controller adalah class atau script yang bertanggung jawab merespon sebuah
+request.</p>
+<p>Pada Codeigniter, request yang diterima oleh file index.php akan diarahkan ke Router untuk meudian oleh router tesebut diarahkan ke Controller.</p>
+Router terletak pada file <b>app/config/Routes.php</b>
+
+
 
