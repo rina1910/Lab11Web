@@ -120,5 +120,65 @@ request.</p>
 <p>Pada Codeigniter, request yang diterima oleh file index.php akan diarahkan ke Router untuk meudian oleh router tesebut diarahkan ke Controller.</p>
 Router terletak pada file <b>app/config/Routes.php</b>
 
+![](Foto/foto10.png)
 
+Pada file tersebut kita dapat mendefinisikan route untuk aplikasi yang kita buat.
+Contoh:
+```php
+$routes->get('/', 'Home::index');
+```
+Kode tersebut akan mengarahkan rute untuk halaman home.
+## Membuat Route Baru.
+Tambahkan kode berikut di dalam <b>Routes.php</b>
+```php
+$routes->get('/about', 'Page::about');
+$routes->get('/contact', 'Page::contact');
+$routes->get('/faqs', 'Page::faqs');
+```
+Untuk mengetahui route yang ditambahkan sudah benar, buka CLI dan jalankan perintah berikut.
+```php
+php spark routes
+```
+![](Foto/foto11.png)
 
+Selanjutnya coba akses route yang telah dibuat dengan mengakses alamat url
+http://localhost/lab11_php_ci/ci4/public/about
+
+![](Foto/foto12.png)
+
+<p>Ketika diakses akan mucul tampilan error 404 file not found, itu artinya file/page tersebut tidak ada. Untuk dapat mengakses halaman tersebut, harus dibuat terlebih
+dahulu Contoller yang sesuai dengan routing yang dibuat yaitu Contoller Page.</p>
+
+## Membuat Controller
+Selanjutnya adalah membuat Controller Page. Buat file baru dengan nama <b>page.php</b> pada direktori Controller kemudian isi kodenya seperti berikut.
+```php
+<?php
+
+namespace App\Controllers;
+
+class Page extends BaseController
+{
+    public function about()
+    {
+        echo "Ini halaman About";
+    }
+    
+    public function contact()
+    {
+        echo "Ini halaman Contact";
+    }
+    
+    public function faqs()
+    {
+        echo "Ini halaman FAQ";
+    }
+}
+```
+Selanjutnya refresh Kembali browser, maka akan ditampilkan hasilnya yaotu halaman sudah dapat diakses.
+![](Foto/foto13.png)
+
+## Auto Routing
+Secara default fitur autoroute pada Codeiginiter sudah aktif. Untuk mengubah status autoroute dapat mengubah nilai variabelnya. Untuk menonaktifkan ubah nilai true menjadi <b>false</b>.
+```php
+$routes->setAutoRoute(true);
+```
