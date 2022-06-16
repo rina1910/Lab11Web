@@ -64,5 +64,31 @@ Ubah nama file env menjadi .env kemudian buka file tersebut dan ubah nilai varia
 <br>Dan inilah Hasilnya</br>
 ![](Foto/foto8.png)
 
-
+## Struktur Direktori
+Untuk lebih memahami Framework Codeigniter 4 perlu mengetahui struktur direktori
+dan file yang ada. Buka pada Windows Explorer atau dari Visual Studio Code ->
+Open Folder.
+Terdapat beberapa direktori dan file yang perlu dipahami fungsi dan kegunaannya.
+<br>• <b>.github</b> folder ini kita butuhkan untuk konfigurasi repo github, seperti konfigurasi untuk build dengan github action;</br>
+• <b>app<b> folder ini akan berisi kode dari aplikasi yang kita kembangkan;
+<br>• <b>public</b> folder ini berisi file yang bisa diakses oleh publik, seperti file index.php,</br>
+robots.txt, favicon.ico, ads.txt, dll;
+<br>• <b>tests</b> folder ini berisi kode untuk melakukan testing dengna PHPunit;</br>
+• <b>vendor</b> folder ini berisi library yang dibutuhkan oleh aplikasi, isinya juga termasuk
+kode core dari system CI.
+<br>• <b>writable</b> folder ini berisi file yang ditulis oleh aplikasi. Nantinya, kita bisa pakai untuk menyimpan file yang di-upload, logs, session, dll.
+Sedangkan file-file yang berada pada root direktori CI sebagai berikut.<br>
+• <b>.env</b> adalah file yang berisi variabel environment yang dibutuhkan oleh aplikasi.
+<br>• <b>.gitignore</b> adalah file yang berisi daftar nama file dan folder yang akan diabaikan oleh Git.</br>
+• <b>build</b> adalah script untuk mengubah versi codeigniter yang digunakan. Ada versi
+release (stabil) dan development (labil).
+<br>• <b>composer.json</b> adalah file JSON yang berisi informasi tentang proyek dan daftar library yang dibutuhkannya. File ini digunakan oleh Composer sebagai acuan.</br>
+• <b>composer.lock</b> adalah file yang berisi informasi versi dari libraray yang digunakan
+aplikasi.
+<br>• <b>license.txt</b> adalah file yang berisi penjelasan tentang lisensi Codeigniter;</br>
+• <b>phpunit.xml.dist</b> adalah file XML yang berisi konfigurasi untuk PHPunit.
+<br>• <b>README.md</b> adalah file keterangan tentang codebase CI. Ini biasanya akan</br>
+dibutuhkan pada repo github atau gitlab.
+• <b>spark</b> adalah program atau script yang berfungsi untuk menjalankan server,
+generate kode, dll.
 
