@@ -297,6 +297,8 @@ Kemudian ubah file <b>app/view/about.php</b> seperti berikut.
 
 <?= $this->include('template/footer'); ?>
 ```
+Selanjutnya refresh tampilan pada alamat http://localhost/lab11_php_ci/ci4/public/about
+
 ![](Foto/foto.jpeg)
 
 # Praktikum 12: Framework Lanjutan (CRUD)
@@ -305,3 +307,76 @@ Kemudian ubah file <b>app/view/about.php</b> seperti berikut.
 Untuk memulai membuat aplikasi CRUD sederhana, yang perlu disiapkan adalah
 database server menggunakan MySQL. Pastikan MySQL Server sudah dapat dijalankan
 melalui XAMPP.
+```
+Membuat Database
+```
+![](Foto/foto17.png)
+```
+Membuat Tabel
+```
+![](Foto/foto18.png)
+
+## Konfigurasi koneksi database
+<p>Selanjutnya membuat konfigurasi untuk menghubungkan dengan database server.</p>
+<p>Konfigurasi dapat dilakukan dengan du acara, yaitu pada file app/config/database.php atau menggunakan file .env. Pada praktikum ini kita gunakan konfigurasi pada file .env.</p>
+![](Foto/foto19.png)
+
+## Membuat Model
+Selanjutnya adalah membuat Model untuk memproses data Artikel. Buat file baru pada
+direktori app/Models dengan nama ArtikelModel.php
+```php
+<?php
+
+namespace App\Models;
+
+use CodeIgniter\Model;
+
+class ArtikelModel extends Model
+{
+    protected $table = 'artikel';
+    protected $primaryKey = 'id';
+    protected $useAutoIncrement = true;
+    protected $allowedFields = ['judul', 'isi', 'status', 'slug', 'gambar'];
+}
+```
+
+## Membuat Controller
+Buat Controller baru dengan nama Artikel.php pada direktori app/Controllers.
+```php
+<?php
+namespace App\Controllers;
+use App\Models\ArtikelModel;
+class Artikel extends BaseController
+{
+    public function index()
+    {
+        $title = 'Daftar Artikel';
+        $model = new ArtikelModel();
+        $artikel = $model->findAll();
+        return view('artikel/index', compact('artikel', 'title'));
+    }
+}
+```
+
+## Membuat View
+Buat direktori baru dengan nama artikel pada direktori app/views, kemudian buat file
+baru dengan nama index.php.
+```php
+<?= $this->include('template/header'); ?>
+<?php if($artikel): foreach($artikel as $row): ?>
+<article class="entry">
+<h2<a href="<?= base_url('/artikel/' . $row['slug']);?>"><?=
+$row['judul']; ?></a>
+</h2>
+<img src="<?= base_url('/gambar/' . $row['gambar']);?>" alt="<?=
+$row['judul']; ?>">
+<p><?= substr($row['isi'], 0, 200); ?></p>
+</article>
+<hr class="divider" />
+<?php endforeach; else: ?>
+<article class="entry">
+<h2>Belum ada data.</h2>
+</article>
+<?php endif; ?>
+<?= $this->include('template/footer'); ?>
+```
