@@ -87,10 +87,9 @@ release (stabil) dan development (labil).
 aplikasi.
 <br>• <b>license.txt</b> adalah file yang berisi penjelasan tentang lisensi Codeigniter;</br>
 • <b>phpunit.xml.dist</b> adalah file XML yang berisi konfigurasi untuk PHPunit.
-<br>• <b>README.md</b> adalah file keterangan tentang codebase CI. Ini biasanya akan</br>
+• <b>README.md</b> adalah file keterangan tentang codebase CI. Ini biasanya akan
 dibutuhkan pada repo github atau gitlab.
-• <b>spark</b> adalah program atau script yang berfungsi untuk menjalankan server,
-generate kode, dll.
+<br>• <b>spark</b> adalah program atau script yang berfungsi untuk menjalankan server, generate kode, dll.</br>
 ![](Foto/foto9.png)
 <p>Fokus kita pada folder <b>app</b>, dimana folder tersebut adalah area kerja kita untuk
 membuat aplikasi. Dan folder <b>public</b> untuk menyimpan aset web seperti css, gambar,
@@ -174,7 +173,7 @@ class Page extends BaseController
     }
 }
 ```
-Selanjutnya refresh Kembali browser, maka akan ditampilkan hasilnya yaotu halaman sudah dapat diakses.
+Selanjutnya refresh Kembali browser http://localhost/lab11_php_ci/ci4/public/page/about , maka akan ditampilkan hasilnya yaitu halaman sudah dapat diakses.
 ![](Foto/foto13.png)
 
 ## Auto Routing
@@ -228,3 +227,73 @@ halaman ini.'
 Pada dasarnya layout web dengan css dapat diimplamentasikan dengan mudah pada codeigniter. Yang perlu diketahui adalah, pada Codeigniter 4 file yang menyimpan asset css dan javascript terletak pada direktori public.
 
 <p>Buat file css pada direktori public dengan nama style.css (copy file dari praktikum lab4_layout. Kita akan gunakan layout yang pernah dibuat pada praktikum 4.</p>
+
+![](Foto/foto16.png)
+Kemudian buat folder <b>template</b> pada direktori <b>view</b> kemudian buat file <b>header.php</b> dan <b>footer.php</b>
+
+File <b>app/view/template/header.php</b>
+```php
+<!DOCTYPE html>
+<html lang="en">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+  <head>
+    <meta charset="UTF-8" />
+    <title><?= $title; ?></title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h1>Layout Sederhana</h1>
+      </header>
+      <nav>
+        <a href="<?= base_url('/'); ?>" class="active">Home</a>
+        <a href="<?= base_url('/artikel'); ?>">Artikel</a>
+        <a href="<?= base_url('/about'); ?>">About</a>
+        <a href="<?= base_url('/contact'); ?>">Kontak</a>
+      </nav>
+      <section id="wrapper">
+        <section id="main"></section>
+```
+File <b>app/view/template/footer.php</b>
+```php 
+        </section>
+        <aside id="sidebar">
+            <div class="widget-box">
+                <h3 class="title">Widget Header</h3>
+                <ul>
+                    <li><a href="#">Widget Link</a></li>
+                    <li><a href="#">Widget Link</a></li>
+                </ul>
+            </div>
+            <div class="widget-box">
+                <h3 class="title">Widget Text</h3>
+                <p>Vestibulum lorem elit, iaculis in nisl volutpat, malesuada
+                    tincidunt arcu. Proin in leo fringilla, vestibulum mi porta, faucibus felis.
+                    Integer pharetra est nunc, nec pretium nunc pretium ac.</p>
+            </div>
+        </aside>
+    </section>
+    <footer>
+        <p>&copy; 2022 - <i>val_18</i>  </p>
+    </footer>
+    </div>
+</body>
+</html>
+```
+Kemudian ubah file <b>app/view/about.php</b> seperti berikut.
+```php
+<?= $this->include('template/header'); ?>
+
+<h1><?= $title; ?></h1>
+<hr>
+<p><?= $content; ?></p>
+
+<?= $this->include('template/footer'); ?>
+```
