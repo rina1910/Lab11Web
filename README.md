@@ -297,3 +297,11 @@ Kemudian ubah file <b>app/view/about.php</b> seperti berikut.
 
 <?= $this->include('template/footer'); ?>
 ```
+![](Foto/foto.jpeg)
+
+# Praktikum 12: Framework Lanjutan (CRUD)
+
+## <b>Langkah-langkah Praktikum</b>
+Untuk memulai membuat aplikasi CRUD sederhana, yang perlu disiapkan adalah
+database server menggunakan MySQL. Pastikan MySQL Server sudah dapat dijalankan
+melalui XAMPP.
