@@ -339,6 +339,8 @@ class ArtikelModel extends Model
     protected $allowedFields = ['judul', 'isi', 'status', 'slug', 'gambar'];
 }
 ```
+<p>ini tampilan di VSC</p>
+![](Foto/foto22.png)
 
 ## Membuat Controller
 Buat Controller baru dengan nama Artikel.php pada direktori app/Controllers.
@@ -357,6 +359,8 @@ class Artikel extends BaseController
     }
 }
 ```
+<p>ini tampilan di VSC</p>
+![](Foto/foto20.png)
 
 ## Membuat View
 Buat direktori baru dengan nama artikel pada direktori app/views, kemudian buat file
@@ -380,3 +384,5 @@ $row['judul']; ?>">
 <?php endif; ?>
 <?= $this->include('template/footer'); ?>
 ```
+<p>ini tampilan di VSC</p>
+![](Foto/foto21.png)
