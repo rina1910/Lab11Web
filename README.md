@@ -281,7 +281,7 @@ File <b>app/view/template/footer.php</b>
         </aside>
     </section>
     <footer>
-        <p>&copy; 2022 - <i>val_18</i>  </p>
+        <p>&copy; 2022 - <i>riris</i>  </p>
     </footer>
     </div>
 </body>
@@ -319,6 +319,7 @@ Membuat Tabel
 ## Konfigurasi koneksi database
 <p>Selanjutnya membuat konfigurasi untuk menghubungkan dengan database server.</p>
 <p>Konfigurasi dapat dilakukan dengan du acara, yaitu pada file app/config/database.php atau menggunakan file .env. Pada praktikum ini kita gunakan konfigurasi pada file .env.</p>
+
 ![](Foto/foto19.png)
 
 ## Membuat Model
@@ -340,6 +341,7 @@ class ArtikelModel extends Model
 }
 ```
 <p>ini tampilan di VSC</p>
+
 ![](Foto/foto22.png)
 
 ## Membuat Controller
@@ -360,6 +362,7 @@ class Artikel extends BaseController
 }
 ```
 <p>ini tampilan di VSC</p>
+
 ![](Foto/foto20.png)
 
 ## Membuat View
@@ -385,4 +388,5 @@ $row['judul']; ?>">
 <?= $this->include('template/footer'); ?>
 ```
 <p>ini tampilan di VSC</p>
+
 ![](Foto/foto21.png)
