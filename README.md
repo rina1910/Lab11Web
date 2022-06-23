@@ -453,7 +453,24 @@ $artikel['judul']; ?>">
 ```
 
 ## <b> Membuat Routing untuk artikel detail </b>
+Buka Kembali file app/config/Routes.php, kemudian tambahkan routing untuk artikel
+detail.
+```php
+$routes->get('/artikel/(:any)', 'Artikel::view/$1');
+```
 
+## <b> Membuat Menu Admin </b>
+Menu admin adalah untuk proses CRUD data artikel. Buat method baru pada
+Controller Artikel dengan nama admin_index().
+```php
+public function admin_index()
+{
+  $title = 'Daftar Artikel';
+  $model = new ArtikelModel();
+  $artikel = $model->findAll();
+  return view('artikel/admin_index', compact('artikel', 'title'));
+}
+```
 
 
 
