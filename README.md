@@ -316,13 +316,13 @@ Membuat Tabel
 ```
 ![](Foto/foto18.png)
 
-## Konfigurasi koneksi database
+## <b> Konfigurasi koneksi database </b>
 <p>Selanjutnya membuat konfigurasi untuk menghubungkan dengan database server.</p>
 <p>Konfigurasi dapat dilakukan dengan du acara, yaitu pada file app/config/database.php atau menggunakan file .env. Pada praktikum ini kita gunakan konfigurasi pada file .env.</p>
 
 ![](Foto/foto19.png)
 
-## Membuat Model
+## <b> Membuat Model </b>
 Selanjutnya adalah membuat Model untuk memproses data Artikel. Buat file baru pada
 direktori app/Models dengan nama ArtikelModel.php
 ```php
@@ -344,7 +344,7 @@ class ArtikelModel extends Model
 
 ![](Foto/foto22.png)
 
-## Membuat Controller
+## <b> Membuat Controller </b>
 Buat Controller baru dengan nama Artikel.php pada direktori app/Controllers.
 ```php
 <?php
@@ -365,7 +365,7 @@ class Artikel extends BaseController
 
 ![](Foto/foto20.png)
 
-## Membuat View
+## <b> Membuat View </b>
 Buat direktori baru dengan nama artikel pada direktori app/views, kemudian buat file
 baru dengan nama index.php.
 ```php
@@ -390,3 +390,71 @@ $row['judul']; ?>">
 <p>ini tampilan di VSC</p>
 
 ![](Foto/foto21.png)
+
+Selanjutnya buka browser kembali, dengan mengakses url http://localhost:8080/artikel
+
+![](Foto/foto25.png)
+
+Belum ada data yang diampilkan. Kemudian coba tambahkan beberapa data pada
+database agar dapat ditampilkan datanya.
+```php
+INSERT INTO artikel (judul, isi, slug) VALUE
+('Artikel pertama', 'Lorem Ipsum adalah contoh teks atau dummy dalam industri
+percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi
+standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak
+dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah
+buku contoh huruf.', 'artikel-pertama'),
+('Artikel kedua', 'Tidak seperti anggapan banyak orang, Lorem Ipsum bukanlah
+teks-teks yang diacak. Ia berakar dari sebuah naskah sastra latin klasik dari
+era 45 sebelum masehi, hingga bisa dipastikan usianya telah mencapai lebih
+dari 2000 tahun.', 'artikel-kedua');
+```
+ini hasil di localhost myphpadmin
+
+![](Foto/foto23.png)
+
+Refresh kembali browser, sehingga akan ditampilkan hasilnya.
+
+![](Foto/foto24.png)
+
+## <b> Membuat Tampilan Detail Artikel </b>
+Tampilan pada saat judul berita di klik maka akan diarahkan ke halaman yang berbeda.
+Tambahkan fungsi baru pada Controller Artikel dengan nama view().
+```php
+public function view($slug)
+{
+    $model = new ArtikelModel();
+    $artikel = $model->where([
+        'slug' => $slug
+    ])->first();
+
+    // Menampilkan error apabila data tidak ada.
+    if (!$artikel)
+    {
+        throw PageNotFoundException::forPageNotFound();
+    }
+    $title = $artikel['judul'];
+    return view('artikel/detail', compact('artikel', 'title'));
+}
+```
+## <b> Membuat View Detail </b>
+Buat view baru untuk halaman detail dengan nama <b>app/views/artikel/detail.php.</b>
+```php
+<?= $this->include('template/header'); ?>
+
+<article class="entry">
+    <h2><?= $artikel['judul']; ?></h2>
+    <img src="<?= base_url('/gambar/' . $artikel['gambar']);?>" alt="<?=
+$artikel['judul']; ?>">
+    <p><?= $row['isi']; ?></p>
+</article>
+
+<?= $this->include('template/footer'); ?>
+```
+
+## <b> Membuat Routing untuk artikel detail </b>
+
+
+
+
+
