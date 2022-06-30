@@ -417,7 +417,7 @@ ini hasil di localhost myphpadmin
 
 Refresh kembali browser, sehingga akan ditampilkan hasilnya.
 
-![](Foto/foto24.png)
+![](Foto/foto24.jpeg)
 
 ## <b> Membuat Tampilan Detail Artikel </b>
 Tampilan pada saat judul berita di klik maka akan diarahkan ke halaman yang berbeda.
@@ -557,7 +557,7 @@ lalu buat juga <strong> admin_footer.php </strong> dilokasi yang sama dengan yan
                 </section>
             </section>
             <footer>
-                <p>&copy; 2022 - Lydia_Diffani</p>
+                <p>&copy; 2022 - Riris_Naomi</p>
             </footer>
         </div>
     </body>
@@ -710,6 +710,7 @@ Artikel berhasil dihapus.
     PRIMARY KEY(id)
     );
     ```
+![foto](foto/fotouser.PNG)
 
 <strong> <p>Membuat Model User</p> </strong>
 Selanjutnya adalah membuat Model untuk memproses data Login. Buat file baru pada direktori <strong>app/Models</strong> dengan nama <strong>UserModel.php</strong>
@@ -817,7 +818,7 @@ btn-primary">Login</button>
 Database seeder digunakan untuk membuat data dummy. Untuk keperluan ujicoba modul login, kita perlu memasukkan data user dan password kedaalam database. Untuk itu buat database seeder untuk tabel user. Buka CLI, kemudian tulis perintah berikut:
 
 ```php php spark make:seeder UserSeeder```
-![foto](foto/v.PNG)
+![foto](foto/fotomake.PNG)
 Selanjutnya, buka file UserSeeder.php yang berada di lokasi direktori /app/Database/Seeds/UserSeeder.php kemudian isi dengan kode berikut:
 ```php
 <?php
@@ -837,9 +838,12 @@ class UserSeeder extends Seeder
 }
 ```
 
-Selanjutnya buka kembali CLI dan ketik perintah berikut: ```php php spark db:seed UserSeeder```
+Selanjutnya buka kembali CLI dan ketik perintah berikut: 
+```php 
+php spark db:seed UserSeeder
+```
 
-![foto](foto/v.PNG)
+![foto](foto/db.jpeg)
 
 <strong> <p>Menambahkan Auth Filter</p> </strong>
 Selanjutnya membuat filer untuk halaman admin. Buat file baru dengan nama <strong>Auth.php</strong> pada direktori <strong>app/Filters.</strong>
@@ -920,7 +924,9 @@ Kemudian buka file <strong>views/artikel/admin_index.php</strong> dan tambahkan 
 
 ```php <?= $pager->links(); ?> ```
 Selanjutnya buka kembali menu daftar artikel, tambahkan data lagi untuk melihat hasilnya.
+
 ![foto](foto/v.PNG)
+
 <strong> <p>Membuat Pencarian<strong> <p>
 <p>Pencarian data digunakan untuk memfilter data.</p>
 <p>Untuk membuat pencarian data, buka kembali Controller Artikel, pada method <strong>admin_index</strong> ubah kodenya seperti berikut.</p>
