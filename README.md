@@ -475,7 +475,7 @@ $artikel = $model->findAll();
 return view('artikel/admin_index', compact('artikel', 'title'));
 }
 ```
-![foto](foto/28.PNG)
+![foto](foto/admin.PNG)
 
 Selanjutnya buat view untuk tampilan admin dengan nama <strong> ```php admin_index.php``` </strong>
 
@@ -575,7 +575,7 @@ $routes->group('admin', function($routes) {
 });
 ```
 
-![foto](foto/28.PNG)
+![foto](foto/routing.PNG)
 
 Akses menu admin dengan url http://localhost:8080/admin/artikel
 
